@@ -1,7 +1,8 @@
 import { Down } from "./Download";
 import { Navname } from "./Navbarname";
+import { CloseButton } from "./svg/CloseButton";
 import { IconButton } from "./svg/IconButton";
-import { MenuIcon } from "./svg/MenuIcon";
+
 import { MoonBUtton } from "./svg/MoonButton";
 
 export const Menu = ({ isVisible, change, isDark }) => {
@@ -18,7 +19,7 @@ export const Menu = ({ isVisible, change, isDark }) => {
             Tom
           </a>
           <div className="flex md:hidden">
-            <MenuIcon />
+            <CloseButton />
           </div>
         </div>
         <p className="container border-t-[1px]"></p>
@@ -30,7 +31,6 @@ export const Menu = ({ isVisible, change, isDark }) => {
 
         <div className="flex justify-between">
           <Navname name={"Switch"} />
-
           <button onClick={change}>
             {isDark ? <MoonBUtton /> : <IconButton />}
           </button>

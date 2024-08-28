@@ -11,19 +11,24 @@ import { Menu } from "@/components/Menu";
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isShow, setIsShow] = useState(false);
 
   const change = () => {
     setIsDark(!isDark);
   };
-  const show = () => {
-    setIsVisible(!isVisible);
+  const showMenu = () => {
+    setIsShow(!isShow);
   };
 
   return (
     <div className="">
-      <Menu isVisible={isVisible} />
-      <HeaderNavi isDark={isDark} change={change} />
+      <Menu
+        isDark={isDark}
+        isShow={isShow}
+        change={change}
+        visible={showMenu}
+      />
+      <HeaderNavi isDark={isDark} change={change} visible={showMenu} />
       <HeroBody />
       <BodyOne />
       <BodySecond />

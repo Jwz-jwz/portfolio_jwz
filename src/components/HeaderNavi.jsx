@@ -4,7 +4,7 @@ import { IconButton } from "./svg/IconButton";
 import { MenuIcon } from "./svg/MenuIcon";
 import { MoonBUtton } from "./svg/MoonButton";
 
-export const HeaderNavi = ({ change, isDark }) => {
+export const HeaderNavi = ({ change, visible, isDark }) => {
   return (
     <div className="w-full px-[16px] py-[4px] md:px-[80px] md:py-[16px] flex justify-center items-center">
       <div className="container flex justify-between px-[32px]">
@@ -29,11 +29,10 @@ export const HeaderNavi = ({ change, isDark }) => {
             <Down />
           </div>
         </div>
-        <div className="flex md:hidden">
-          <button onClick={change}>
-            <MenuIcon />
-          </button>
-        </div>
+
+        <button className="flex md:hidden" onClick={visible}>
+          <MenuIcon />
+        </button>
       </div>
     </div>
   );
